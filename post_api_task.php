@@ -3,7 +3,7 @@
 // Providing the api for hitting.
 $url = 'https://chimpu.xyz/api/post.php';
 
-// Payload as phone number.
+// Payload as phone number
 $data = array(
     'phonenumber' => '9717131037'
 );
@@ -20,17 +20,17 @@ curl_setopt($curl, CURLOPT_RETURNTRANSFER, true);  //curl_setopt() is used to pr
 // Execute cURL session
 $response = curl_exec($curl); //curl_exec() is a function that sends the request and returns (or displays) the content it receives.
 
-// Check for errors
+// Checking Whether We Received Any Response Or Not (UF not then throw error else receive the response)
 if($response === false) {
     echo 'cURL Error: ' . curl_error($curl);
 } else {
     // Get the response headers
-    $response_headers = curl_getinfo($curl);
+    $response_headers = curl_getinfo($curl); //curl_getinfo() — Get information regarding a specific transfer / Last Transfer
 
-    // Close cURL session
+    // Closing The Created cURL session
     curl_close($curl);
 
-    // Print the received headers
+    // Printing the received headers
     echo '<h2>Headers received:</h2>';
     foreach ($response_headers as $header => $value) {
         echo "<strong>$header:</strong> $value<br>";
