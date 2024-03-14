@@ -3,7 +3,7 @@
 // Providing the api for hitting.
 $url = 'https://chimpu.xyz/api/post.php';
 
-// Payload as phone number
+// Payload as phone number.
 $data = array(
     'phonenumber' => '9717131037'
 );
